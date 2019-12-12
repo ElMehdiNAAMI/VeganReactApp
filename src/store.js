@@ -5,7 +5,7 @@ export const sources = [
     id: "Tofu",
     title: "Tofu",
     info:
-      "Soy products are among the richest sources of protein in a plant-based diet",
+      "Soy products are among the richest sources of protein in a plant-based diet.",
     nutrients: "proteins"
   },
   {
@@ -19,13 +19,13 @@ export const sources = [
     id: "Chickpeas",
     title: "Chickpeas",
     info:
-      "Chickpeas, also known as garbanzo beans, are practically a staple ingredient in Middle Eastern cooking",
+      "Chickpeas, also known as garbanzo beans, are practically a staple ingredient in Middle Eastern cooking.",
     nutrients: "proteins"
   },
   {
     id: "Edamame",
     title: "Edamame",
-    info: "Edamame is a green soybean, very popular in East Asian cuisines",
+    info: "Edamame is a green soybean, very popular in East Asian cuisines.",
     nutrients: "proteins"
   },
   {
@@ -52,7 +52,7 @@ export const sources = [
     id: "Rice",
     title: "Rice",
     info:
-      "As a cereal grain, it is the most widely consumed staple food for a large part of the world's human population,",
+      "As a cereal grain, it is the most widely consumed staple food for a large part of the world's human population.",
     nutrients: "carbs"
   },
   {
@@ -73,7 +73,7 @@ export const sources = [
     id: "Coconut",
     title: "Coconut",
     info:
-      "Coconut is a high source of saturated fat in the form of medium-chain triglyceride, which function differently to the long-chain fatty acids found in animal products",
+      "Coconut is a high source of saturated fat in the form of medium-chain triglyceride, which function differently to the long-chain fatty acids found in animal products.",
     nutrients: "fats"
   },
   {
