@@ -6,6 +6,9 @@ import { nutrients, sources } from "../store";
 export class App extends Component {
   state = { sources };
 
+  handleMacroNutrientSelected = category => {
+    console.log(category);
+  };
   //this method sorts sources based on the nutrient they provide
   getSourcesByNutrients() {
     /* the video method
@@ -26,6 +29,7 @@ export class App extends Component {
     });
     return Object.entries(sources); // cool ES+ feature
   }
+
   render() {
     const sources = this.getSourcesByNutrients();
 
@@ -33,7 +37,10 @@ export class App extends Component {
       <React.Fragment>
         <Header />
         <Exercices sources={sources} />
-        <Footer nutrients={nutrients} />
+        <Footer
+          nutrients={nutrients}
+          onSelect={this.handleMacroNutrientSelected}
+        />
       </React.Fragment>
     );
   }

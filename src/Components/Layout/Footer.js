@@ -1,12 +1,18 @@
 import React from "react";
 import { Paper, Tabs, Tab } from "@material-ui/core";
 
-export default function Footer(props) {
+export default function Footer({ nutrients, onSelect }) {
   return (
     <Paper>
-      <Tabs value={0} indicatorColor="primary" textColor="primary" centered>
+      <Tabs
+        value={0}
+        indicatorColor="primary"
+        onChange={onSelect}
+        textColor="primary"
+        centered
+      >
         <Tab label="All" />
-        {props.nutrients.map(val => (
+        {nutrients.map(val => (
           <Tab label={val} key={val} />
         ))}
       </Tabs>
