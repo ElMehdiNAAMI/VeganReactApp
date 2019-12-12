@@ -2,6 +2,7 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import LeftPane from "./LeftPane";
 import RightPane from "./RightPane";
+
 export default function index() {
   return (
     <Grid container>
@@ -16,7 +17,7 @@ export default function index() {
 }
 
 const styles = {
-  Paper: {
+  paper: {
     padding: 20,
     marginTop: 10,
     marginBottom: 10
