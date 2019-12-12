@@ -8,29 +8,36 @@ import {
   ListItemText
 } from "@material-ui/core";
 
-export default function index({ sources }) {
+export default function index({ sources, category }) {
+  console.log(sources);
+
   return (
     <Grid container>
       <Grid item sm>
         <Paper style={styles.paper}>
-          {sources.map(([nutrient, sources]) => (
-            <React.Fragment key={nutrient}>
-              <Typography variant="h4" style={{ textTransform: "capitalize" }}>
-                {nutrient}
-              </Typography>
+          {sources.map(([nutrient, sources]) =>
+            !category || category === nutrient ? (
+              <React.Fragment key={nutrient}>
+                <Typography
+                  variant="h4"
+                  style={{ textTransform: "capitalize" }}
+                >
+                  {nutrient}
+                </Typography>
 
-              <List component="ul">
-                {sources.map(source => (
-                  <ListItem button key={source.title}>
-                    <ListItemText
-                      primary={source.title}
-                      style={{ textTransform: "capitalize" }}
-                    />
-                  </ListItem>
-                ))}
-              </List>
-            </React.Fragment>
-          ))}
+                <List component="ul">
+                  {sources.map(source => (
+                    <ListItem button key={source.title}>
+                      <ListItemText
+                        primary={source.title}
+                        style={{ textTransform: "capitalize" }}
+                      />
+                    </ListItem>
+                  ))}
+                </List>
+              </React.Fragment>
+            ) : null
+          )}
         </Paper>
       </Grid>
       <Grid item sm>

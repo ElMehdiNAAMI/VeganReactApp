@@ -6,8 +6,8 @@ import { nutrients, sources } from "../store";
 export class App extends Component {
   state = { sources };
 
-  handleMacroNutrientSelected = category => {
-    console.log(category);
+  handleCategorySelected = category => {
+    this.setState({ category });
   };
   //this method sorts sources based on the nutrient they provide
   getSourcesByNutrients() {
@@ -32,14 +32,16 @@ export class App extends Component {
 
   render() {
     const sources = this.getSourcesByNutrients();
+    const { category } = this.state;
 
     return (
       <React.Fragment>
         <Header />
-        <Exercices sources={sources} />
+        <Exercices sources={sources} category={category} />
         <Footer
+          category={category}
           nutrients={nutrients}
-          onSelect={this.handleMacroNutrientSelected}
+          onSelect={this.handleCategorySelected}
         />
       </React.Fragment>
     );
