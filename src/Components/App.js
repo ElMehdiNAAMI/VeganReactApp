@@ -13,6 +13,10 @@ export class App extends Component {
   handleCategorySelected = category => {
     this.setState({ category });
   };
+  handleSourceAdded = addedObj => {
+    addedObj.id = addedObj.title;
+    this.setState({ sources: [...this.state.sources, addedObj] });
+  };
   //this method sorts sources based on the nutrient they provide
   getSourcesByNutrients() {
     const sources = {};
@@ -31,7 +35,7 @@ export class App extends Component {
 
     return (
       <React.Fragment>
-        <Header />
+        <Header getSource={this.handleSourceAdded} />
         <Sources
           sources={sources}
           category={category}
