@@ -8,7 +8,7 @@ export class App extends Component {
 
   //state functions
   handleSourceSelected = id => {
-    this.setState({ id });
+    this.setState({ sourceSelected: id });
   };
   handleCategorySelected = category => {
     this.setState({ category });
@@ -27,7 +27,7 @@ export class App extends Component {
 
   render() {
     const sources = this.getSourcesByNutrients();
-    const { category, id } = this.state;
+    const { category, sourceSelected } = this.state;
 
     return (
       <React.Fragment>
@@ -36,7 +36,7 @@ export class App extends Component {
           sources={sources}
           category={category}
           onSelect={this.handleSourceSelected}
-          sourceId={id}
+          sourceId={sourceSelected}
         />
         <Footer
           category={category}

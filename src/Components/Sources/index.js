@@ -12,6 +12,8 @@ export default function index({ sources, category, onSelect, sourceId }) {
   console.log(sources);
   //destructuring the sources Arr
   const sourcesArr = [...sources[0][1], ...sources[1][1], ...sources[2][1]];
+  // The source object with the sourceId
+  const sourceIdObj = sourcesArr.find(obj => obj.id === sourceId);
 
   return (
     <Grid container>
@@ -54,13 +56,11 @@ export default function index({ sources, category, onSelect, sourceId }) {
             variant="h3"
             style={{ paddingBottom: 20, textTransform: "capitalize" }}
           >
-            {sourceId
-              ? sourcesArr.find(obj => obj.id === sourceId).title
-              : " Welcome "}
+            {sourceId ? sourceIdObj.title : " Welcome "}
           </Typography>
-          <Typography variant="h6">
+          <Typography variant="body1">
             {sourceId
-              ? sourcesArr.find(obj => obj.id === sourceId).info
+              ? sourceIdObj.info
               : " Please select a source of macronutrients in the left pan "}
           </Typography>
         </Paper>
