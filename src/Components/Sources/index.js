@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 
 export default function index({ sources, category, onSelect, sourceId }) {
-  console.log(sources);
   //destructuring the sources Arr
   const sourcesArr = [...sources[0][1], ...sources[1][1], ...sources[2][1]];
   // The source object with the sourceId
