@@ -8,8 +8,10 @@ import {
   ListItemText
 } from "@material-ui/core";
 
-export default function index({ sources, category }) {
+export default function index({ sources, category, onSelect, sourceId }) {
   console.log(sources);
+  //destructuring the sources Arr
+  const sourcesArr = [...sources[0][1], ...sources[1][1], ...sources[2][1]];
 
   return (
     <Grid container>
@@ -26,10 +28,16 @@ export default function index({ sources, category }) {
                 </Typography>
 
                 <List component="ul">
-                  {sources.map(source => (
-                    <ListItem button key={source.title}>
+                  {sources.map(({ title, id }) => (
+                    <ListItem
+                      button
+                      key={title}
+                      onClick={() => {
+                        onSelect(id);
+                      }}
+                    >
                       <ListItemText
-                        primary={source.title}
+                        primary={title}
                         style={{ textTransform: "capitalize" }}
                       />
                     </ListItem>
@@ -42,11 +50,18 @@ export default function index({ sources, category }) {
       </Grid>
       <Grid item sm>
         <Paper style={styles.paper}>
-          <Typography variant="h3" style={{ paddingBottom: 20 }}>
-            Welcome
+          <Typography
+            variant="h3"
+            style={{ paddingBottom: 20, textTransform: "capitalize" }}
+          >
+            {sourceId
+              ? sourcesArr.find(obj => obj.id === sourceId).title
+              : " Welcome "}
           </Typography>
           <Typography variant="h6">
-            Please select a source of macronutrients in the left pan
+            {sourceId
+              ? sourcesArr.find(obj => obj.id === sourceId).info
+              : " Please select a source of macronutrients in the left pan "}
           </Typography>
         </Paper>
       </Grid>
