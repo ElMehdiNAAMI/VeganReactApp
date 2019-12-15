@@ -15,12 +15,14 @@ export class App extends Component {
   };
   handleSourceAdded = addedObj => {
     addedObj.id = addedObj.title;
-    this.setState({ sources: [...this.state.sources, addedObj] });
+    this.setState(({ sources }) => ({
+      sources: [...sources, addedObj]
+    }));
   };
   handleSourceDeleted = id => {
-    this.setState({
-      sources: this.state.sources.filter(sourceObj => sourceObj.id !== id)
-    });
+    this.setState(({ sources }) => ({
+      sources: sources.filter(sourceObj => sourceObj.id !== id)
+    }));
   };
   //this method sorts sources based on the nutrient they provide
   getSourcesByNutrients() {

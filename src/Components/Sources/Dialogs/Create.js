@@ -59,7 +59,15 @@ export default function Create({ getSource }) {
       <Button onClick={handleClickOpen}>
         <AddCircleOutlineRoundedIcon style={{ fontSize: "50px" }} />
       </Button>
-      <Dialog open={open} onClose={handleClose} style={{ textAlign: "center" }}>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        PaperProps={{
+          style: {
+            backgroundColor: "#795548"
+          }
+        }}
+      >
         <DialogTitle id="form-dialog-title">
           Add your favorite foods
         </DialogTitle>
@@ -75,6 +83,7 @@ export default function Create({ getSource }) {
           >
             <TextField
               variant="outlined"
+              color="secondary"
               label="Source name"
               onChange={handleTextField("title")}
               style={textFieldStyle}
@@ -82,6 +91,7 @@ export default function Create({ getSource }) {
             <br />
             <TextField
               variant="outlined"
+              color="secondary"
               label="Information about the source"
               multiline
               rows="4"
@@ -89,7 +99,7 @@ export default function Create({ getSource }) {
               style={textFieldStyle}
             />
             <br />
-            <FormControl style={textFieldStyle}>
+            <FormControl style={textFieldStyle} color="secondary">
               <InputLabel>What macronutrient?</InputLabel>
               <Select
                 value={addedSource.nutrients}

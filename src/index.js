@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import App from "./Components/App";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import green from "@material-ui/core/colors/green";
-console.log(green);
 
 const theme = createMuiTheme({
   palette: {
@@ -12,7 +11,6 @@ const theme = createMuiTheme({
     secondary: { main: green[100] }
   }
 });
-console.log(theme);
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

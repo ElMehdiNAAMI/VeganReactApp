@@ -73,10 +73,10 @@ export default function index({
             variant="h3"
             style={{ paddingBottom: 20, textTransform: "capitalize" }}
           >
-            {sourceId ? sourceIdObj.title : " Welcome "}
+            {sourceIdObj ? sourceIdObj.title : " Welcome "}
           </Typography>
           <Typography variant="body1">
-            {sourceId
+            {sourceIdObj
               ? sourceIdObj.info
               : " Please select a source of macronutrients in the left pan "}
           </Typography>

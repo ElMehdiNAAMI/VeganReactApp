@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Tabs, Tab, Typography, Paper } from "@material-ui/core";
+import { Tabs, Tab, Typography, Paper } from "@material-ui/core";
 
 export default function Footer({ nutrients, category, onSelect }) {
   const index = category
@@ -23,7 +23,7 @@ export default function Footer({ nutrients, category, onSelect }) {
           ))}
         </Tabs>
       </Paper>
-      <footer class="bg-light py-1">
+      <footer>
         <Typography
           color="primary"
           style={{
