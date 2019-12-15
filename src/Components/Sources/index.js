@@ -10,6 +10,7 @@ import {
   ListItemSecondaryAction
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Cancel";
+import Image from "./img/main.jpg"; // Import using relative path
 
 export default function index({
   sources,
@@ -25,7 +26,7 @@ export default function index({
 
   return (
     <Grid container>
-      <Grid item sm={4}>
+      <Grid item xs={12} sm={4}>
         <Paper style={styles.paper}>
           {sources.map(([nutrient, sources]) =>
             !category || category === nutrient ? (
@@ -66,7 +67,7 @@ export default function index({
           )}
         </Paper>
       </Grid>
-      <Grid item sm>
+      <Grid item xs={12} sm={8}>
         <Paper style={styles.paper}>
           <Typography
             variant="h3"
@@ -87,10 +88,12 @@ export default function index({
 
 const styles = {
   paper: {
-    height: "70vh",
+    height: "67vh",
     padding: 20,
     marginTop: 10,
     marginBottom: 10,
-    overflowY: "auto"
+    overflowY: "auto",
+    background: `linear-gradient(to right bottom,rgba(121,85,72,0.95),rgba(121,85,72,0.95)),url(${Image})`,
+    backgroundSize: "cover"
   }
 };

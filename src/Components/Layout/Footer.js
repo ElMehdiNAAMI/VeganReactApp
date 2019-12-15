@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Tabs, Tab } from "@material-ui/core";
+import { AppBar, Tabs, Tab, Typography, Paper } from "@material-ui/core";
 
 export default function Footer({ nutrients, category, onSelect }) {
   const index = category
@@ -9,19 +9,31 @@ export default function Footer({ nutrients, category, onSelect }) {
     onSelect(ind === 0 ? "" : nutrients[ind - 1]);
   };
   return (
-    <Paper>
-      <Tabs
-        value={index}
-        indicatorColor="primary"
-        onChange={selectBasedOnIndex} //onChange CB param are event/index of the tab where it happened
-        textColor="primary"
-        centered
-      >
-        <Tab label="All" />
-        {nutrients.map(val => (
-          <Tab label={val} key={val} />
-        ))}
-      </Tabs>
-    </Paper>
+    <React.Fragment>
+      <Paper position="static" style={{ background: "#2e7d32" }}>
+        <Tabs
+          value={index}
+          indicatorColor="secondary"
+          onChange={selectBasedOnIndex} //onChange CB param are event/index of the tab where it happened
+          centered
+        >
+          <Tab label="All" />
+          {nutrients.map(val => (
+            <Tab label={val} key={val} />
+          ))}
+        </Tabs>
+      </Paper>
+      <footer class="bg-light py-1">
+        <Typography
+          color="primary"
+          style={{
+            textAlign: "center",
+            paddingTop: "5px"
+          }}
+        >
+          Copyright &copy; 2019 - El Mehdi Naami
+        </Typography>
+      </footer>
+    </React.Fragment>
   );
 }

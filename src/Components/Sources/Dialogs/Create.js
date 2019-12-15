@@ -56,11 +56,13 @@ export default function Create({ getSource }) {
   // ***********************
   return (
     <React.Fragment>
-      <Button color="inherit" onClick={handleClickOpen}>
+      <Button onClick={handleClickOpen}>
         <AddCircleOutlineRoundedIcon style={{ fontSize: "50px" }} />
       </Button>
       <Dialog open={open} onClose={handleClose} style={{ textAlign: "center" }}>
-        <DialogTitle id="form-dialog-title">Title</DialogTitle>
+        <DialogTitle id="form-dialog-title">
+          Add your favorite foods
+        </DialogTitle>
         <DialogContent>
           <DialogContentText>
             You can add your favorite sources of macronutrients.
@@ -88,7 +90,7 @@ export default function Create({ getSource }) {
             />
             <br />
             <FormControl style={textFieldStyle}>
-              <InputLabel>Choose the macronutrient it provides</InputLabel>
+              <InputLabel>What macronutrient?</InputLabel>
               <Select
                 value={addedSource.nutrients}
                 onChange={handleTextField("nutrients")}
