@@ -5,18 +5,27 @@ import {
   Typography,
   ListItem,
   List,
-  ListItemText
+  ListItemText,
+  IconButton,
+  ListItemSecondaryAction
 } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Cancel";
 
-export default function index({ sources, category, onSelect, sourceId }) {
-  //destructuring the sources Arr
+export default function index({
+  sources,
+  category,
+  onSelect,
+  sourceId,
+  onDelete
+}) {
+  //destructuring the sources Arr to undo the entries function
   const sourcesArr = [...sources[0][1], ...sources[1][1], ...sources[2][1]];
   // The source object with the sourceId
   const sourceIdObj = sourcesArr.find(obj => obj.id === sourceId);
 
   return (
     <Grid container>
-      <Grid item sm>
+      <Grid item sm={4}>
         <Paper style={styles.paper}>
           {sources.map(([nutrient, sources]) =>
             !category || category === nutrient ? (
@@ -41,6 +50,14 @@ export default function index({ sources, category, onSelect, sourceId }) {
                         primary={title}
                         style={{ textTransform: "capitalize" }}
                       />
+                      <ListItemSecondaryAction>
+                        <IconButton
+                          edge="end"
+                          onClick={onDelete.bind(null, id)}
+                        >
+                          <DeleteIcon />
+                        </IconButton>
+                      </ListItemSecondaryAction>
                     </ListItem>
                   ))}
                 </List>

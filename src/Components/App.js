@@ -17,6 +17,11 @@ export class App extends Component {
     addedObj.id = addedObj.title;
     this.setState({ sources: [...this.state.sources, addedObj] });
   };
+  handleSourceDeleted = id => {
+    this.setState({
+      sources: this.state.sources.filter(sourceObj => sourceObj.id !== id)
+    });
+  };
   //this method sorts sources based on the nutrient they provide
   getSourcesByNutrients() {
     const sources = {};
@@ -31,6 +36,7 @@ export class App extends Component {
 
   render() {
     const sources = this.getSourcesByNutrients();
+
     const { category, sourceSelected } = this.state;
 
     return (
@@ -41,6 +47,7 @@ export class App extends Component {
           category={category}
           onSelect={this.handleSourceSelected}
           sourceId={sourceSelected}
+          onDelete={this.handleSourceDeleted}
         />
         <Footer
           category={category}

@@ -44,9 +44,12 @@ export default function Create({ getSource }) {
   };
   //related to the button and the form submit of the dialog
   const handleAdded = () => {
-    getSource(addedSource);
-    handleClose();
-    console.log(addedSource);
+    const { title, nutrients } = addedSource;
+    // checking if the user filled the form correctly before adding to the state
+    if (title && nutrients) {
+      getSource(addedSource);
+      handleClose();
+    }
   };
   //styling
   const textFieldStyle = { width: "95%", margin: "5px" };
