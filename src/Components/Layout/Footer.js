@@ -24,15 +24,17 @@ export default function Footer({ nutrients, category, onSelect }) {
         </Tabs>
       </Paper>
       <footer>
-        <Typography
-          color="primary"
-          style={{
-            textAlign: "center",
-            paddingTop: "5px"
-          }}
-        >
-          Copyright &copy; 2019 - El Mehdi Naami
-        </Typography>
+        <a href="#" style={{ textDecoration: " none" }}>
+          <Typography
+            color="primary"
+            style={{
+              textAlign: "center",
+              paddingTop: "5px"
+            }}
+          >
+            Copyright &copy; 2019 - El Mehdi Naami
+          </Typography>
+        </a>
       </footer>
     </React.Fragment>
   );

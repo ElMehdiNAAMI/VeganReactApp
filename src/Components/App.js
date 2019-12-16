@@ -24,6 +24,28 @@ export class App extends Component {
       sources: sources.filter(sourceObj => sourceObj.id !== id)
     }));
   };
+  handleFoodToSearch = id => {
+    this.setState(({ foodToSearch }) => {
+      if (foodToSearch) {
+        if (!foodToSearch.includes(id)) {
+          return {
+            foodToSearch: [...foodToSearch, id]
+          };
+        } else {
+          return {
+            foodToSearch: [...foodToSearch]
+          };
+        }
+      } else {
+        return { foodToSearch: [id] };
+      }
+    });
+  };
+  handleDeleteFoodToSearch = foodToDeleteId => {
+    this.setState(({ foodToSearch }) => ({
+      foodToSearch: foodToSearch.filter(food => food !== foodToDeleteId)
+    }));
+  };
   //this method sorts sources based on the nutrient they provide
   getSourcesByNutrients() {
     const sources = {};
@@ -39,7 +61,7 @@ export class App extends Component {
   render() {
     const sources = this.getSourcesByNutrients();
 
-    const { category, sourceSelected } = this.state;
+    const { category, sourceSelected, foodToSearch } = this.state;
 
     return (
       <React.Fragment>
@@ -47,9 +69,12 @@ export class App extends Component {
         <Sources
           sources={sources}
           category={category}
+          foodToSearch={foodToSearch}
           onSelect={this.handleSourceSelected}
           sourceId={sourceSelected}
           onDelete={this.handleSourceDeleted}
+          onLookFor={this.handleFoodToSearch}
+          onDeleteFoodToSearch={this.handleDeleteFoodToSearch}
         />
         <Footer
           category={category}

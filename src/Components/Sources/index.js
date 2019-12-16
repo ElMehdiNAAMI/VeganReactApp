@@ -11,13 +11,18 @@ import {
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Cancel";
 import Image from "./img/main.jpg"; // Import using relative path
+import RestaurantMenuRoundedIcon from "@material-ui/icons/RestaurantMenuRounded";
+import Search from "../Search/Search";
 
 export default function index({
   sources,
   category,
-  onSelect,
   sourceId,
-  onDelete
+  foodToSearch,
+  onSelect,
+  onDelete,
+  onDeleteFoodToSearch,
+  onLookFor
 }) {
   //destructuring the sources Arr to undo the entries function
   const sourcesArr = [...sources[0][1], ...sources[1][1], ...sources[2][1]];
@@ -27,7 +32,7 @@ export default function index({
   return (
     <Grid container>
       <Grid item xs={12} sm={4}>
-        <Paper style={styles.paper}>
+        <Paper style={styles.paperOne}>
           {sources.map(([nutrient, sources]) =>
             !category || category === nutrient ? (
               <React.Fragment key={nutrient}>
@@ -52,6 +57,9 @@ export default function index({
                         style={{ textTransform: "capitalize" }}
                       />
                       <ListItemSecondaryAction>
+                        <IconButton onClick={onLookFor.bind(null, id)}>
+                          <RestaurantMenuRoundedIcon />
+                        </IconButton>
                         <IconButton
                           edge="end"
                           onClick={onDelete.bind(null, id)}
@@ -68,7 +76,7 @@ export default function index({
         </Paper>
       </Grid>
       <Grid item xs={12} sm={8}>
-        <Paper style={styles.paper}>
+        <Paper style={styles.paperTwo}>
           <Typography
             variant="h3"
             style={{ paddingBottom: 20, textTransform: "capitalize" }}
@@ -78,22 +86,43 @@ export default function index({
           <Typography variant="body1">
             {sourceIdObj
               ? sourceIdObj.info
-              : " Please select a source of macronutrients in the left pan "}
+              : " Get your macronutrients with vegan recipes"}
           </Typography>
+        </Paper>
+        <Paper style={styles.paperThree}>
+          <Search
+            foodToSearch={foodToSearch}
+            onDeleteFoodToSearch={onDeleteFoodToSearch}
+          />
         </Paper>
       </Grid>
     </Grid>
   );
 }
+const paper = {
+  padding: "3vh",
+  marginTop: 10,
+  marginBottom: 10,
+  overflowY: "auto",
+  background: `linear-gradient(to right bottom,rgba(121,85,72,0.95),rgba(121,85,72,0.95)),url(${Image})`,
 
+  wordWrap: "break-word"
+};
 const styles = {
-  paper: {
-    height: "67vh",
-    padding: 20,
-    marginTop: 10,
-    marginBottom: 10,
-    overflowY: "auto",
-    background: `linear-gradient(to right bottom,rgba(121,85,72,0.95),rgba(121,85,72,0.95)),url(${Image})`,
+  paperOne: {
+    ...paper,
+    marginRight: "5px",
+    height: "67vh"
+  },
+  paperTwo: {
+    ...paper,
+    marginBottom: "1vh",
+    height: "25vh"
+  },
+  paperThree: {
+    ...paper,
+    marginTop: 0,
+    height: "35vh",
     backgroundSize: "cover"
   }
 };
