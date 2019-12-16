@@ -9,7 +9,7 @@ import {
   IconButton,
   ListItemSecondaryAction
 } from "@material-ui/core";
-import DeleteIcon from "@material-ui/icons/Cancel";
+import DeleteIcon from "@material-ui/icons/Delete";
 import Image from "./img/main.jpg"; // Import using relative path
 import RestaurantMenuRoundedIcon from "@material-ui/icons/RestaurantMenuRounded";
 import Search from "../Search/Search";
@@ -58,13 +58,19 @@ export default function index({
                       />
                       <ListItemSecondaryAction>
                         <IconButton onClick={onLookFor.bind(null, id)}>
-                          <RestaurantMenuRoundedIcon />
+                          <RestaurantMenuRoundedIcon
+                            style={{ backgroundColor: "#2e7d32" }}
+                            color="secondary"
+                          />
                         </IconButton>
                         <IconButton
                           edge="end"
                           onClick={onDelete.bind(null, id)}
                         >
-                          <DeleteIcon />
+                          <DeleteIcon
+                            style={{ backgroundColor: "#3e2723" }}
+                            color="secondary"
+                          />
                         </IconButton>
                       </ListItemSecondaryAction>
                     </ListItem>
