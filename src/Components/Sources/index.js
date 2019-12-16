@@ -13,6 +13,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import Image from "./img/main.jpg"; // Import using relative path
 import RestaurantMenuRoundedIcon from "@material-ui/icons/RestaurantMenuRounded";
 import Search from "../Search/Search";
+import MediaQ from "./MediaQ";
 
 export default function index({
   sources,
@@ -28,6 +29,41 @@ export default function index({
   const sourcesArr = [...sources[0][1], ...sources[1][1], ...sources[2][1]];
   // The source object with the sourceId
   const sourceIdObj = sourcesArr.find(obj => obj.id === sourceId);
+  //styling
+  const paper = {
+    padding: "3vh",
+    marginTop: 10,
+    marginBottom: 5,
+    overflowY: "auto",
+    background: `linear-gradient(to right bottom,rgba(121,85,72,0.95),rgba(121,85,72,0.95)),url(${Image})`,
+
+    wordWrap: "break-word"
+  };
+  const styles = {
+    paperOne: {
+      ...paper,
+      marginRight: "5px",
+      height: "50vh"
+    },
+    paperTwo: {
+      ...paper,
+      marginTop: 0,
+      marginBottom: "1vh",
+      minHeight: "25vh"
+    },
+    paperThree: {
+      ...paper,
+      marginTop: 0,
+      height: "35vh",
+      backgroundSize: "cover"
+    }
+  };
+  //Using media queries
+  if (MediaQ("600px")) {
+    styles.paperTwo.height = "25vh";
+    styles.paperTwo.marginTop = "10px";
+    styles.paperOne.height = "67vh";
+  }
 
   return (
     <Grid container>
@@ -105,30 +141,3 @@ export default function index({
     </Grid>
   );
 }
-const paper = {
-  padding: "3vh",
-  marginTop: 10,
-  marginBottom: 10,
-  overflowY: "auto",
-  background: `linear-gradient(to right bottom,rgba(121,85,72,0.95),rgba(121,85,72,0.95)),url(${Image})`,
-
-  wordWrap: "break-word"
-};
-const styles = {
-  paperOne: {
-    ...paper,
-    marginRight: "5px",
-    height: "67vh"
-  },
-  paperTwo: {
-    ...paper,
-    marginBottom: "1vh",
-    height: "25vh"
-  },
-  paperThree: {
-    ...paper,
-    marginTop: 0,
-    height: "35vh",
-    backgroundSize: "cover"
-  }
-};

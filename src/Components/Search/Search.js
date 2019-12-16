@@ -26,6 +26,8 @@ function Search({ foodToSearch, onDeleteFoodToSearch }) {
         variant="outlined"
         color="secondary"
         label="You can add recipe details eg: gluten free,sugar free,natural..."
+        multiline
+        rows={2}
         // onChange={handleTextField("info")}
         style={{ width: "70%", marginTop: "2%" }}
       />

@@ -10,7 +10,7 @@ export default function ChipsArray({ foodToSearch, onDeleteFoodToSearch }) {
           style={{
             margin: "5px",
             backgroundColor: "#2e7d32",
-            fontSize: "30px"
+            fontSize: "20px"
           }}
         />
       </div>
