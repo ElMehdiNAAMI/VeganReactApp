@@ -25,15 +25,12 @@ function Search({ foodToSearch, onDeleteFoodToSearch }) {
       <TextField
         variant="outlined"
         color="secondary"
-        label="You can add recipe details eg: gluten free,sugar free,natural..."
+        label="You can also add details eg: gluten free,sugar free,natural..."
         multiline
         rows={2}
         // onChange={handleTextField("info")}
         style={{ width: "70%", marginTop: "2%" }}
       />
-      <IconButton type="submit">
-        <SearchIcon style={{ fontSize: "40px" }} />
-      </IconButton>
     </form>
   );
 }

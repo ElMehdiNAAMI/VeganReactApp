@@ -53,16 +53,20 @@ export default function index({
     },
     paperThree: {
       ...paper,
+      paddingLeft: 0,
+      paddingRight: 0,
       marginTop: 0,
-      height: "35vh",
+      minHeight: "35vh",
       backgroundSize: "cover"
     }
   };
   //Using media queries
   if (MediaQ("600px")) {
+    styles.paperOne.height = "67vh";
     styles.paperTwo.height = "25vh";
     styles.paperTwo.marginTop = "10px";
-    styles.paperOne.height = "67vh";
+    styles.paperThree.height = "25vh";
+    styles.paperThree.marginTop = "10px";
   }
 
   return (
