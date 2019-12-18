@@ -31,19 +31,7 @@ export default function Recipe({
           }
         }}
       >
-        <DialogTitle id="form-dialog-title">
-          {searchResults.length > 3
-            ? `TOP ${searchResults.length} RECIPES WITH THIS
-          FOOD COMBINATION`
-            : searchResults.length !== 1
-            ? `WE GOT YOU
-          ${searchResults.length} RECIPES WITH THIS FOOD COMBINATION`
-            : `WE GOT YOU
-          ONE RECIPE WITH THIS FOOD COMBINATION`}
-        </DialogTitle>
-        <DialogContent>
-          <ListRecipes searchResults={searchResults} />
-        </DialogContent>
+        <ListRecipes searchResults={searchResults} />
         <DialogActions>
           <Button onClick={handleClose} variant="contained" color="primary">
             Close
@@ -65,8 +53,8 @@ export default function Recipe({
           }
         }}
       >
-        <DialogTitle id="form-dialog-title">Oops! </DialogTitle>
         <DialogContent>
+          <DialogTitle id="form-dialog-title">Oops! </DialogTitle>
           <p> No recipe was found, please try another combination of food</p>
 
           <img src={Image} alt="Trouble" style={{ maxWidth: "100%" }}></img>

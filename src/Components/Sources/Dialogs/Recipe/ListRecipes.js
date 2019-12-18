@@ -7,6 +7,8 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,48 +38,61 @@ export default function ListRecipes({ searchResults }) {
   const classes = useStyles();
 
   return (
-    <List className={classes.root}>
-      {searchResults.map(recipeObj => (
-        <ListItem
-          alignItems="flex-start"
-          key={recipeObj.image}
-          onClick={() => {
-            console.log(recipeObj);
-          }}
-        >
-          <Button
-            style={{
-              backgroundColor: "#2e7d32",
-              borderRadius: "15px",
-              width: "100%"
+    <DialogContent>
+      <DialogTitle id="form-dialog-title">
+        {searchResults.length > 3
+          ? `TOP ${searchResults.length} RECIPES WITH THIS
+          FOOD COMBINATION`
+          : searchResults.length !== 1
+          ? `WE GOT YOU
+          ${searchResults.length} RECIPES WITH THIS FOOD COMBINATION`
+          : `WE GOT YOU
+          ONE RECIPE WITH THIS FOOD COMBINATION`}
+      </DialogTitle>
+
+      <List className={classes.root}>
+        {searchResults.map(recipeObj => (
+          <ListItem
+            alignItems="flex-start"
+            key={recipeObj.image}
+            onClick={() => {
+              console.log(recipeObj);
             }}
           >
-            <ListItemAvatar>
-              <Avatar
-                alt={recipeObj.source}
-                src={recipeObj.image}
-                style={{ width: "60px", height: "60px" }}
+            <Button
+              style={{
+                backgroundColor: "#2e7d32",
+                borderRadius: "15px",
+                width: "100%"
+              }}
+            >
+              <ListItemAvatar>
+                <Avatar
+                  alt={recipeObj.source}
+                  src={recipeObj.image}
+                  style={{ width: "60px", height: "60px" }}
+                />
+              </ListItemAvatar>
+              <ListItemText
+                primary={trimStr(recipeObj.label)}
+                secondary={
+                  <React.Fragment>
+                    <Typography
+                      component="span"
+                      variant="body2"
+                      className={classes.inline}
+                      color="textPrimary"
+                    >
+                      Health Labels
+                    </Typography>
+                    — {recipeObj.healthLabels.slice(0, 3).join(", ")}
+                  </React.Fragment>
+                }
               />
-            </ListItemAvatar>
-            <ListItemText
-              primary={trimStr(recipeObj.label)}
-              secondary={
-                <React.Fragment>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    className={classes.inline}
-                    color="textPrimary"
-                  >
-                    Health Labels
-                  </Typography>
-                  — {recipeObj.healthLabels.slice(0, 3).join(", ")}
-                </React.Fragment>
-              }
-            />
-          </Button>
-        </ListItem>
-      ))}
-    </List>
+            </Button>
+          </ListItem>
+        ))}
+      </List>
+    </DialogContent>
   );
 }
