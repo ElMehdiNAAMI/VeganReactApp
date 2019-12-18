@@ -35,7 +35,7 @@ export default function index({
     marginTop: 10,
     marginBottom: 5,
     overflowY: "auto",
-    background: `linear-gradient(to right bottom,rgba(121,85,72,0.95),rgba(121,85,72,0.95)),url(${Image})`,
+    background: `linear-gradient(to right bottom,rgba(121,85,72,0.90),rgba(121,85,72,0.90)),url(${Image})`,
 
     wordWrap: "break-word"
   };

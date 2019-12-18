@@ -10,9 +10,8 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
-    maxWidth: 360,
-    backgroundColor: "#795548"
+    backgroundColor: "#795548",
+    textAlign: "center"
   },
   inline: {
     display: "inline"
@@ -40,7 +39,13 @@ export default function ListRecipes({ searchResults }) {
     <List className={classes.root}>
       {searchResults.map(recipeObj => (
         <ListItem alignItems="flex-start" key={recipeObj.image}>
-          <Button style={{ backgroundColor: "#2e7d32", borderRadius: "15px" }}>
+          <Button
+            style={{
+              backgroundColor: "#2e7d32",
+              borderRadius: "15px",
+              width: "100%"
+            }}
+          >
             <ListItemAvatar>
               <Avatar
                 alt={recipeObj.source}

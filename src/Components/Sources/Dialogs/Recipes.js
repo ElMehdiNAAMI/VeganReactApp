@@ -35,7 +35,14 @@ export default function Recipe({
         }}
       >
         <DialogTitle id="form-dialog-title">
-          TOP {searchResults.length} RECIPES
+          {searchResults.length > 3
+            ? `TOP ${searchResults.length} RECIPES WITH THIS
+          FOOD COMBINATION`
+            : searchResults.length !== 1
+            ? `WE GOT YOU
+          ${searchResults.length} RECIPES WITH THIS FOOD COMBINATION`
+            : `WE GOT YOU
+          ONE RECIPE WITH THIS FOOD COMBINATION`}
         </DialogTitle>
         <DialogContent>
           <ListRecipes searchResults={searchResults} />
