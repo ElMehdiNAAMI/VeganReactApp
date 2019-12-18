@@ -3,13 +3,26 @@ import TextField from "@material-ui/core/TextField";
 import FoodsToSearchChips from "./FoodsToSearchChips";
 import Recipe from "../Sources/Dialogs/Recipes";
 import axios from "axios";
+import Backdrop from "@material-ui/core/Backdrop";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles(theme => ({
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: "#fff"
+  }
+}));
 
 function Search({ foodToSearch, onDeleteFoodToSearch }) {
   //recipe details and search state
   const [recipeDetails, setRecipeDetails] = React.useState("");
   const [searchResults, setSearchResults] = React.useState([]);
-
+  // state of the empty array search
   const [isThereNoResults, setIsThereNoResults] = React.useState(false);
+  // Loading state
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
 
   // getting the string query from the array of foodToSearch and their details
   let foodToSearchQuery;
@@ -22,10 +35,11 @@ function Search({ foodToSearch, onDeleteFoodToSearch }) {
   const getRecipes = async () => {
     if (foodToSearchQuery) {
       try {
+        setOpen(true);
         const res = await axios(
           `https://api.edamam.com/search?q=${foodToSearchQuery}&app_id=1b892b69&from=0&to=4&app_key=19280bdd1375f97d6ff2354207cb89bf&health=vegan`
         );
-
+        setOpen(false);
         const recipeObjArr = res.data.hits.map(obj => obj.recipe);
         //in case the array of recipes is empty
         if (recipeObjArr.length === 0) {
@@ -47,6 +61,15 @@ function Search({ foodToSearch, onDeleteFoodToSearch }) {
       }}
       style={{ textAlign: "center", marginTop: "6vh" }}
     >
+      <Backdrop
+        className={classes.backdrop}
+        open={open}
+        onClick={() => {
+          setOpen(false);
+        }}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <Recipe
         searchResults={searchResults}
         setSearchResults={setSearchResults}

@@ -41,6 +41,8 @@ export default function Recipe({ showRecipe, setShowRecipe }) {
         {showRecipe.healthLabels.join(", ")}
         <br />
         <br />
+        <em>How To Cook It ?</em>
+        <br />
         This recipe was carefully designed and tested by{" "}
         <span style={{ textDecoration: "underline" }}>
           {showRecipe.source}
