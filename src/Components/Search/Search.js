@@ -9,6 +9,8 @@ function Search({ foodToSearch, onDeleteFoodToSearch }) {
   const [recipeDetails, setRecipeDetails] = React.useState("");
   const [searchResults, setSearchResults] = React.useState([]);
 
+  const [isThereNoResults, setIsThereNoResults] = React.useState(false);
+
   // getting the string query from the array of foodToSearch and their details
   let foodToSearchQuery;
 
@@ -28,7 +30,9 @@ function Search({ foodToSearch, onDeleteFoodToSearch }) {
         const recipeObjArr = res.data.hits.map(obj => obj.recipe);
         //in case the array is empty return dialogue of error
         if (recipeObjArr.length === 0) {
-          alert("Please try another comb");
+          console.log("no results");
+
+          setIsThereNoResults(true);
         }
 
         setSearchResults(recipeObjArr);
@@ -49,6 +53,8 @@ function Search({ foodToSearch, onDeleteFoodToSearch }) {
       <Recipe
         searchResults={searchResults}
         setSearchResults={setSearchResults}
+        isThereNoResults={isThereNoResults}
+        setIsThereNoResults={setIsThereNoResults}
       />
 
       <FoodsToSearchChips

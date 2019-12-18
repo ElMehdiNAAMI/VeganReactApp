@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
@@ -23,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 const trimStr = (str, limit = 20) => {
   if (str.length > limit) {
     //trim the string to the maximum length
-    var str = str.substr(0, limit);
+    str = str.substr(0, limit);
 
     //re-trim if we are in the middle of a word
     str = str.substr(0, Math.min(str.length, str.lastIndexOf(" ")));

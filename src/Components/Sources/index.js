@@ -10,7 +10,7 @@ import {
   ListItemSecondaryAction
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
-import Image from "./img/main.jpg"; // Import using relative path
+import Image from "./img/main.jpg";
 import RestaurantMenuRoundedIcon from "@material-ui/icons/RestaurantMenuRounded";
 import Search from "../Search/Search";
 import MediaQ from "./MediaQ";
