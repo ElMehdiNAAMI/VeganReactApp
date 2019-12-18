@@ -34,10 +34,14 @@ const trimStr = (str, limit = 35) => {
 
   return str;
 };
-export default function ListRecipes({ searchResults }) {
+export default function ListRecipes({
+  searchResults,
+  showRecipe,
+  setShowRecipe
+}) {
   const classes = useStyles();
 
-  return (
+  return !showRecipe ? (
     <DialogContent>
       <DialogTitle id="form-dialog-title">
         {searchResults.length > 3
@@ -56,7 +60,7 @@ export default function ListRecipes({ searchResults }) {
             alignItems="flex-start"
             key={recipeObj.image}
             onClick={() => {
-              console.log(recipeObj);
+              setShowRecipe(recipeObj);
             }}
           >
             <Button
@@ -94,5 +98,5 @@ export default function ListRecipes({ searchResults }) {
         ))}
       </List>
     </DialogContent>
-  );
+  ) : null;
 }

@@ -5,18 +5,23 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import ListRecipes from "./Recipe/ListRecipes";
+import Recipe from "./Recipe/Recipe";
 import Image from "./img/jam.png"; // Import using relative path
 
-export default function Recipe({
+export default function Recipes({
   searchResults,
   setSearchResults,
   isThereNoResults,
   setIsThereNoResults
 }) {
+  // state
+  const [showRecipe, setShowRecipe] = React.useState(false);
+
   // related to the cleaning of search results state by the opening and closing of the dialog
   const handleClose = () => {
     setSearchResults("");
     setIsThereNoResults(false);
+    setShowRecipe(false);
   };
   //if there was results
   if (searchResults.length > 0) {
@@ -27,12 +32,30 @@ export default function Recipe({
         PaperProps={{
           style: {
             textAlign: "center",
-            backgroundColor: "#795548"
+            backgroundColor: "#795548",
+            width: "100vw",
+            height: "100vh"
           }
         }}
       >
-        <ListRecipes searchResults={searchResults} />
+        <ListRecipes
+          searchResults={searchResults}
+          showRecipe={showRecipe}
+          setShowRecipe={setShowRecipe}
+        />
+        <Recipe showRecipe={showRecipe} setShowRecipe={setShowRecipe} />
         <DialogActions>
+          {showRecipe ? (
+            <Button
+              onClick={() => {
+                setShowRecipe(false);
+              }}
+              variant="contained"
+              color="primary"
+            >
+              {"<<"}Go Back
+            </Button>
+          ) : null}
           <Button onClick={handleClose} variant="contained" color="primary">
             Close
           </Button>
