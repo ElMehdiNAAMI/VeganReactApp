@@ -7,7 +7,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 
-export default function Create({ getSource }) {
+export default function AboutUs() {
   // related to the opening and closing of the dialog
   const [open, setOpen] = React.useState(false);
 

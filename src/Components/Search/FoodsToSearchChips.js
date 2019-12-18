@@ -11,19 +11,20 @@ export default function ChipsArray({ foodToSearch, onDeleteFoodToSearch }) {
     backgroundColor: "#2e7d32",
     fontSize: "15px"
   };
-  const iconStyle = {
+  const buttonStyle = {
     fontSize: "20px"
   };
   if (MediaQ("600px")) {
     chipStyle.fontSize = "30px";
-    iconStyle.fontSize = "30px";
+    buttonStyle.fontSize = "30px";
   }
   if (!foodToSearch || foodToSearch.length === 0) {
     return (
       <div>
         <Chip label="Add foods to search their recipes" style={chipStyle} />
-        <IconButton type="submit">
-          <SearchIcon style={iconStyle} />
+        <IconButton style={buttonStyle} type="submit">
+          <SearchIcon />
+          Search
         </IconButton>
       </div>
     );
@@ -40,8 +41,8 @@ export default function ChipsArray({ foodToSearch, onDeleteFoodToSearch }) {
             />
           );
         })}
-        <IconButton type="submit">
-          <SearchIcon style={iconStyle} />
+        <IconButton style={buttonStyle} type="submit">
+          <SearchIcon /> Search
         </IconButton>
       </div>
     );
