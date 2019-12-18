@@ -13,15 +13,12 @@ export default function Recipe({
   isThereNoResults,
   setIsThereNoResults
 }) {
-  console.log("searchResults ");
-  console.log(searchResults);
-
   // related to the cleaning of search results state by the opening and closing of the dialog
   const handleClose = () => {
     setSearchResults("");
     setIsThereNoResults(false);
   };
-
+  //if there was results
   if (searchResults.length > 0) {
     return (
       <Dialog
@@ -54,7 +51,9 @@ export default function Recipe({
         </DialogActions>
       </Dialog>
     );
-  } else if (isThereNoResults) {
+  }
+  //if there was no recipes
+  else if (isThereNoResults) {
     return (
       <Dialog
         open={isThereNoResults}

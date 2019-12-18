@@ -25,13 +25,10 @@ function Search({ foodToSearch, onDeleteFoodToSearch }) {
         const res = await axios(
           `https://api.edamam.com/search?q=${foodToSearchQuery}&app_id=1b892b69&from=0&to=4&app_key=19280bdd1375f97d6ff2354207cb89bf&health=vegan`
         );
-        console.log(res);
 
         const recipeObjArr = res.data.hits.map(obj => obj.recipe);
-        //in case the array is empty return dialogue of error
+        //in case the array of recipes is empty
         if (recipeObjArr.length === 0) {
-          console.log("no results");
-
           setIsThereNoResults(true);
         }
 

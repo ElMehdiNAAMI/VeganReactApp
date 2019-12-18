@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const trimStr = (str, limit = 20) => {
+const trimStr = (str, limit = 35) => {
   if (str.length > limit) {
     //trim the string to the maximum length
     str = str.substr(0, limit);
@@ -38,7 +38,13 @@ export default function ListRecipes({ searchResults }) {
   return (
     <List className={classes.root}>
       {searchResults.map(recipeObj => (
-        <ListItem alignItems="flex-start" key={recipeObj.image}>
+        <ListItem
+          alignItems="flex-start"
+          key={recipeObj.image}
+          onClick={() => {
+            console.log(recipeObj);
+          }}
+        >
           <Button
             style={{
               backgroundColor: "#2e7d32",
@@ -65,7 +71,7 @@ export default function ListRecipes({ searchResults }) {
                   >
                     Health Labels
                   </Typography>
-                  — {recipeObj.healthLabels.slice(0, 2).join(", ")}
+                  — {recipeObj.healthLabels.slice(0, 3).join(", ")}
                 </React.Fragment>
               }
             />
