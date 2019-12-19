@@ -24,7 +24,12 @@ export default function Footer({ nutrients, category, onSelect }) {
         </Tabs>
       </Paper>
       <footer>
-        <a href="#" style={{ textDecoration: " none" }}>
+        <a
+          href="https://www.lmehdi.com"
+          style={{ textDecoration: " none" }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Typography
             color="primary"
             style={{

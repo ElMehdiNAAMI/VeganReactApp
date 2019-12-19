@@ -82,11 +82,10 @@ function Search({ foodToSearch, onDeleteFoodToSearch }) {
         foodToSearch={foodToSearch}
       />
       <TextField
-        style={{ height: "100px !important" }}
+        style={{ width: "70%", marginTop: "2%" }}
         variant="outlined"
         color="secondary"
         label="You can add details eg: gluten free,natural..."
-        style={{ width: "70%", marginTop: "2%" }}
         onChange={e => {
           // Preparing the recipe details set by the user for the query (needs - instead of spaces)
           setRecipeDetails(e.target.value.split(" ").join("-"));
