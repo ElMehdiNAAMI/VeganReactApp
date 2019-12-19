@@ -130,9 +130,16 @@ export default function index({
             {sourceIdObj ? sourceIdObj.title : " Welcome "}
           </Typography>
           <Typography variant="body1">
-            {sourceIdObj
-              ? sourceIdObj.info
-              : " Get your macronutrients with vegan recipes"}
+            {sourceIdObj ? (
+              sourceIdObj.info
+            ) : (
+              <React.Fragment>
+                Get your macronutrients with vegan recipes.
+                <br />
+                You can add your favorite foods to the food list with the plus
+                icon on the top right.
+              </React.Fragment>
+            )}
           </Typography>
         </Paper>
         <Paper style={styles.paperThree}>

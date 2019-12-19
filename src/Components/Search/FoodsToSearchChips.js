@@ -5,7 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import MediaQ from "../Sources/MediaQ";
 
 export default function ChipsArray({ foodToSearch, onDeleteFoodToSearch }) {
-  //styling
+  //Styling and mediaQ
   const chipStyle = {
     margin: "5px",
     backgroundColor: "#2e7d32",

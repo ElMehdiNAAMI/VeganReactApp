@@ -20,7 +20,7 @@ function Search({ foodToSearch, onDeleteFoodToSearch }) {
   const [searchResults, setSearchResults] = React.useState([]);
   // state of the empty array search
   const [isThereNoResults, setIsThereNoResults] = React.useState(false);
-  // Loading state
+  // loading state
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 

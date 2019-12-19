@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// reducing title length
 const trimStr = (str, limit = 35) => {
   if (str.length > limit) {
     //trim the string to the maximum length
@@ -48,9 +49,9 @@ export default function ListRecipes({
           ? `TOP ${searchResults.length} RECIPES WITH THIS
           FOOD COMBINATION`
           : searchResults.length !== 1
-          ? `WE GOT YOU
+          ? `WE'VE GOT YOU
           ${searchResults.length} RECIPES WITH THIS FOOD COMBINATION`
-          : `WE GOT YOU
+          : `WE'VE GOT YOU
           ONE RECIPE WITH THIS FOOD COMBINATION`}
       </DialogTitle>
 

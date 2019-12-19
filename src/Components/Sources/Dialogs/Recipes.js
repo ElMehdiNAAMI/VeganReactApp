@@ -6,7 +6,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import ListRecipes from "./Recipe/ListRecipes";
 import Recipe from "./Recipe/Recipe";
-import Image from "./img/jam.png"; // Import using relative path
+import Image from "./img/jam.png";
 
 export default function Recipes({
   searchResults,

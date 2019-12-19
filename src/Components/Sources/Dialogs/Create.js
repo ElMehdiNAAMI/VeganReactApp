@@ -28,7 +28,6 @@ export default function Create({ getSource }) {
       nutrients: ""
     });
   };
-  //************* *
   // related to the text fields
   const [addedSource, setSource] = React.useState({
     title: "",
@@ -53,7 +52,6 @@ export default function Create({ getSource }) {
   };
   //styling
   const textFieldStyle = { width: "95%", margin: "5px" };
-  // ***********************
   return (
     <React.Fragment>
       <Button onClick={handleClickOpen}>

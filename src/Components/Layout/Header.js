@@ -8,7 +8,7 @@ export default function Header({ getSource }) {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h4" color="inherit" style={{ flex: 1 }}>
-          Vegan Macros Recipes
+          Greeny Recipes
         </Typography>
         <AboutUs />
         <Create getSource={getSource} />

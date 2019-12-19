@@ -55,7 +55,7 @@ export class App extends Component {
       });
     });
 
-    return Object.entries(sources); // cool ES+ feature
+    return Object.entries(sources);
   }
 
   render() {

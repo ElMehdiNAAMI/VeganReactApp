@@ -18,7 +18,6 @@ export default function AboutUs() {
     //basically cleans the state
     setOpen(false);
   };
-  //************* *
 
   return (
     <React.Fragment>
@@ -37,7 +36,14 @@ export default function AboutUs() {
         <DialogTitle id="form-dialog-title">About This App</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            You can add your favorite sources of macronutrients.
+            You can add and save your favorite sources of macronutrients with
+            the plus icon on the top right. You can then specify a food
+            combination and search for its recipes.
+            <br />
+            You can also add details to your recipes (eg: Peanut-Free,
+            Sugar-Free, Alcohol-Free).
+            <br />
+            All the recipes you will get will be 100% vegan.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
