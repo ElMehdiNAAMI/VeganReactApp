@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "edf31b3efedab164f38e681fbb69c038",
+    "revision": "311cb47ce79bd0ac3cb2581b18ac4646",
     "url": "/VeganReactApp/index.html"
   },
   {
