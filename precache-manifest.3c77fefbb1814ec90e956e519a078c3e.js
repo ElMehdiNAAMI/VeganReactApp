@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "311cb47ce79bd0ac3cb2581b18ac4646",
+    "revision": "ed99ea8b09189fdcb1b60bfe0664eac6",
     "url": "/VeganReactApp/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/VeganReactApp/static/js/2.3fefd82a.chunk.js"
   },
   {
-    "revision": "1ffd7ad526f3e23bcc6f",
-    "url": "/VeganReactApp/static/js/main.d84c26dd.chunk.js"
+    "revision": "9f3b51c421e13bc75bd6",
+    "url": "/VeganReactApp/static/js/main.6e0fbf2a.chunk.js"
   },
   {
     "revision": "abcc67547a1868348117",
