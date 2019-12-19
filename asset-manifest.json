@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/VeganReactApp/static/js/main.6e0fbf2a.chunk.js",
-    "main.js.map": "/VeganReactApp/static/js/main.6e0fbf2a.chunk.js.map",
+    "main.js": "/VeganReactApp/static/js/main.5fb2cd63.chunk.js",
+    "main.js.map": "/VeganReactApp/static/js/main.5fb2cd63.chunk.js.map",
     "runtime-main.js": "/VeganReactApp/static/js/runtime-main.ab57368c.js",
     "runtime-main.js.map": "/VeganReactApp/static/js/runtime-main.ab57368c.js.map",
-    "static/js/2.3fefd82a.chunk.js": "/VeganReactApp/static/js/2.3fefd82a.chunk.js",
-    "static/js/2.3fefd82a.chunk.js.map": "/VeganReactApp/static/js/2.3fefd82a.chunk.js.map",
+    "static/js/2.dca873cf.chunk.js": "/VeganReactApp/static/js/2.dca873cf.chunk.js",
+    "static/js/2.dca873cf.chunk.js.map": "/VeganReactApp/static/js/2.dca873cf.chunk.js.map",
     "index.html": "/VeganReactApp/index.html",
-    "precache-manifest.3c77fefbb1814ec90e956e519a078c3e.js": "/VeganReactApp/precache-manifest.3c77fefbb1814ec90e956e519a078c3e.js",
+    "precache-manifest.af120c8dc4adf34eade60ad1c98d4ae1.js": "/VeganReactApp/precache-manifest.af120c8dc4adf34eade60ad1c98d4ae1.js",
     "service-worker.js": "/VeganReactApp/service-worker.js",
     "static/media/jam.png": "/VeganReactApp/static/media/jam.f8cc6a25.png",
     "static/media/main.jpg": "/VeganReactApp/static/media/main.560b74fd.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ab57368c.js",
-    "static/js/2.3fefd82a.chunk.js",
-    "static/js/main.6e0fbf2a.chunk.js"
+    "static/js/2.dca873cf.chunk.js",
+    "static/js/main.5fb2cd63.chunk.js"
   ]
 }
